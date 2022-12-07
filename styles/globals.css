@@ -15,12 +15,61 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+dialog {
+  top: 30px;
+  padding: 0;
+  width: 400px;
+  top: 70px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: #000;
+
+  /* For Polyfill */
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* For Native */
+dialog::backdrop {
+  background-color: #000;
+  opacity: 0.3;
+}
+
+/* For Polyfill */
+dialog + .backdrop {
+  background-color: #000;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* For Polyfill */
+dialog:not([open]) {
+  display: none;
+}
+
+.dialog-body {
+  padding: 16px;
+}
+
+header {
+  background-color: #eaeff9;
+  font-size: 23px;
+}
+
+dialog > p {
+  padding: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+section {
+  background-color: #fff;
 }
